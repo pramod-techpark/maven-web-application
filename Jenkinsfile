@@ -7,6 +7,7 @@ node{
     def mavenHome = tool name: 'maven3.8.7'
     try{
             stage('CheckOutCode'){
+                sendslacknotifications('STARTED')
             git branch: 'development', credentialsId: '3420acb6-43db-4449-9f20-ebf2f73bb9a4', url: 'https://github.com/pramod-techpark/maven-web-application.git'
         }
             stage('Build'){
