@@ -58,5 +58,5 @@ node{
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary)
+  slackSend (color: colorCode, message: summary, channel: '#citibank-team')
 }
