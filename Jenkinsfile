@@ -32,7 +32,10 @@ node{
     finally{
         sendslacknotifications(currentBuild.result)
     }
-    def sendslacknotifications(String buildStatus = 'STARTED') {
+  
+}
+
+  def sendslacknotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
@@ -56,5 +59,4 @@ node{
 
   // Send notifications
   slackSend (color: colorCode, message: summary)
-}
 }
